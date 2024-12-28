@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Click POP-UP</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+			font-family: 'poppins',sans-serif;
+		}
+		main{
+			padding: 12% 0px 0px 12%;
+		}
+		main button{
+			color: white;
+			background-color: black;
+			width: 110px;
+			height: 30px;
+			border: 1px solid transparent;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		.p{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 300px;
+			margin-left: 70%;
+			background-color: white;
+			color: white;
+		}
+		.p p{
+			height: 40px;
+			width: 300px;
+			color: black;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin: 5px 0px;
+			align-content: center;
+			padding: 0px 10px;
+			font-weight: 600;
+			position: relative;
+			transition: 1s all ease-in-out;
+			animation-name: trans;
+			animation-duration: 0.5s;
+			animation-iteration-count: 1;
+			box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+			z-index: 1;
+		}
+		@keyframes trans {
+			from{
+				transform: translateX(100%);
+			}
+			to{
+				transform: translateX(0%);
+			}
+		}
+		.p .s::before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: green;
+			animation-name: animate;
+			animation-duration: 4s;
+			animation-iteration-count: 1;
+		}
+		.p .r::before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: red;
+			animation-name: animate;
+			animation-duration: 4s;
+			animation-iteration-count: 1;
+		}
+		.p .i::before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: orange;
+			animation-name: animate;
+			animation-duration: 3s;
+			animation-iteration-count: 1;
+		}
+
+		@keyframes animate {
+			from{
+				width: 100%;
+			}
+			to{
+				width: 0%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<button class="success" onclick="messege(smsg)">success</button>
+		<button class="error" onclick="messege(emsg)">error</button>
+		<button class="invalid" onclick="messege(imsg)">invalid</button>
+		<div class="p">
+			
+		</div>
+	</main>
+</body>
+<script type="text/javascript" src="popup.js"></script>
+</html>
